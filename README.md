@@ -1,3 +1,4 @@
 # AI-Powered-Sudoku
 
-### REQUIRED LIBRARIES
+### Required Python Version
+##### Python 3.11
