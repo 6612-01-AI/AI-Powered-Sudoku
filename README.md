@@ -5,8 +5,8 @@ Use `Python 3.11`
 
 ### Requisite Library
 ```
-PyGame
-Random
-Time 
+import pygame
+import random
+import time 
 ```
 `Custom Package` that we developed in each directory
