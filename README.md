@@ -10,4 +10,11 @@
   import random
   import time 
   ```
-  `Custom Package` that we developed in each directory
+  ### Custom Package
+
+  ```
+  from solver_CSP import solve, valid
+  from solver_DFS import solve_dfs, valid
+  from solver_IDS import iterative_deepening_solve, valid
+
+  ```
