@@ -2,10 +2,9 @@
 import pygame
 import time
 import random
-from solver import solve, valid
+from solver_IDS import iterative_deepening_solve, valid
 pygame.font.init()
 
-import random
 
 def generate_puzzle(difficulty):
     # This function will generate a random Sudoku puzzle based on the difficulty.
@@ -30,7 +29,7 @@ def generate_puzzle(difficulty):
 
     # Remove cells to create the puzzle
     squares = side*side
-    empties = squares * 3//4
+    empties = squares - difficulty
     for p in random.sample(range(squares), empties):
         board[p//side][p%side] = 0
 
@@ -38,7 +37,7 @@ def generate_puzzle(difficulty):
 
 class Grid:
     
-    board = generate_puzzle(difficulty=3)
+    board = generate_puzzle(difficulty=30)
 
     def __init__(self, rows, cols, width, height, win):
         self.rows = rows
@@ -122,52 +121,29 @@ class Grid:
                     return False
         return True
 
-    def solve(self):
-        find = find_empty(self.model)
-        if not find:
-            return True
-        else:
-            row, col = find
-
-        for i in range(1, 10):
-            if valid(self.model, i, (row, col)):
-                self.model[row][col] = i
-
-                if self.solve():
-                    return True
-
-                self.model[row][col] = 0
-
-        return False
-
     def solve_gui(self):
         self.update_model()
-        find = find_empty(self.model)
-        if not find:
+        result = iterative_deepening_solve(self.model, self.update_gui_callback)
+        if result:
+            self.model = result
+            self.update_cubes()
             return True
         else:
-            row, col = find
+            print("No solution found.")
+            return False
 
-        for i in range(1, 10):
-            if valid(self.model, i, (row, col)):
-                self.model[row][col] = i
-                self.cubes[row][col].set(i)
+    def update_gui_callback(self, board, row, col, placed):
+        pygame.time.delay(50)  # Delay for visual effect
+        self.cubes[row][col].set(board[row][col])
+        self.cubes[row][col].draw_change(self.win, placed)
+        pygame.display.update()
+
+    def update_cubes(self):
+        for row in range(9):
+            for col in range(9):
+                self.cubes[row][col].set(self.model[row][col])
                 self.cubes[row][col].draw_change(self.win, True)
-                self.update_model()
-                pygame.display.update()
-                pygame.time.delay(100)
-
-                if self.solve_gui():
-                    return True
-
-                self.model[row][col] = 0
-                self.cubes[row][col].set(0)
-                self.update_model()
-                self.cubes[row][col].draw_change(self.win, False)
-                pygame.display.update()
-                pygame.time.delay(100)
-
-        return False
+        pygame.display.update()
 
     def draw(self):
         # Draw the grid on the window (win)
@@ -243,35 +219,12 @@ def find_empty(bo):
     return None
 
 
-def valid(bo, num, pos):
-    # Check row
-    for i in range(len(bo[0])):
-        if bo[pos[0]][i] == num and pos[1] != i:
-            return False
-
-    # Check column
-    for i in range(len(bo)):
-        if bo[i][pos[1]] == num and pos[0] != i:
-            return False
-
-    # Check box
-    box_x = pos[1] // 3
-    box_y = pos[0] // 3
-
-    for i in range(box_y*3, box_y*3 + 3):
-        for j in range(box_x * 3, box_x*3 + 3):
-            if bo[i][j] == num and (i,j) != pos:
-                return False
-
-    return True
-
-
 def redraw_window(win, board, time, strikes):
     win.fill((255,255,255))
     # Draw time
     fnt = pygame.font.SysFont("comicsans", 40)
     text = fnt.render("Time: " + format_time(time), 1, (0,0,0))
-    win.blit(text, (540 - 160, 560))
+    win.blit(text, (540 - 500, 560))
     # Draw Strikes
     text = fnt.render("X " * strikes, 1, (255, 0, 0))
     win.blit(text, (20, 560))
@@ -289,7 +242,7 @@ def format_time(secs):
 
 
 def main():
-    win = pygame.display.set_mode((540,600))
+    win = pygame.display.set_mode((540,650))
     pygame.display.set_caption("Sudoku")
     board = Grid(9, 9, 540, 540, win)
     key = None
@@ -304,61 +257,8 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_1:
-                    key = 1
-                if event.key == pygame.K_2:
-                    key = 2
-                if event.key == pygame.K_3:
-                    key = 3
-                if event.key == pygame.K_4:
-                    key = 4
-                if event.key == pygame.K_5:
-                    key = 5
-                if event.key == pygame.K_6:
-                    key = 6
-                if event.key == pygame.K_7:
-                    key = 7
-                if event.key == pygame.K_8:
-                    key = 8
-                if event.key == pygame.K_9:
-                    key = 9
-                if event.key == pygame.K_KP1:
-                    key = 1
-                if event.key == pygame.K_KP2:
-                    key = 2
-                if event.key == pygame.K_KP3:
-                    key = 3
-                if event.key == pygame.K_KP4:
-                    key = 4
-                if event.key == pygame.K_KP5:
-                    key = 5
-                if event.key == pygame.K_KP6:
-                    key = 6
-                if event.key == pygame.K_KP7:
-                    key = 7
-                if event.key == pygame.K_KP8:
-                    key = 8
-                if event.key == pygame.K_KP9:
-                    key = 9
-                if event.key == pygame.K_DELETE:
-                    board.clear()
-                    key = None
-
                 if event.key == pygame.K_SPACE:
                     board.solve_gui()
-
-                if event.key == pygame.K_RETURN:
-                    i, j = board.selected
-                    if board.cubes[i][j].temp != 0:
-                        if board.place(board.cubes[i][j].temp):
-                            print("Success")
-                        else:
-                            print("Wrong")
-                            strikes += 1
-                        key = None
-
-                        if board.is_finished():
-                            print("Game over")
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pos = pygame.mouse.get_pos()
