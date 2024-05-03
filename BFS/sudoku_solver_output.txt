@@ -1,0 +1,17 @@
+Total recursive calls: 151
+Time taken to solve: 26.90 seconds
+
+Total recursive calls: 85
+Time taken to solve: 21.16 seconds
+
+Total recursive calls: 104
+Time taken to solve: 23.64 seconds
+
+Total recursive calls: 60
+Time taken to solve: 17.28 seconds
+
+Total recursive calls: 139
+Time taken to solve: 24.95 secondsTotal iterations: 36466
+Time taken to solve: 0.29 seconds
+Total iterations: 5581
+Time taken to solve: 0.04 seconds
