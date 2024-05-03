@@ -18,6 +18,18 @@ The solver employs a combination of backtracking algorithms and constraint satis
 - `random` : Allows generation of random numbers.
 - `solver_CSP` : Contains functions for solving Sudoku puzzles.
 
+  ```
+  pip install pygame
+  ```
+
+  ```
+  import pygame
+  import time
+  import random
+  from solver_CSP import solve, valid
+
+  ```
+
 ### Function Definitions
 - `generate_puzzle(difficulty)` : Generates a random Sudoku puzzle based on the specified difficulty level.
 - `find_empty(bo)` : Finds an empty cell in the Sudoku board.
