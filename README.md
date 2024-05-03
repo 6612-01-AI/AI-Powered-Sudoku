@@ -22,11 +22,16 @@ Leveraging a blend of backtracking algorithms and constraint satisfaction method
 
   ```
 ## Execute
+```
+python CSP.py
+
+python IDS.py
+
+python DFS.py
+```
 
 # AI Solver Input
 | Keys              | Actions                                                          |
 |-------------------|------------------------------------------------------------------|
-|`Space`  	    | Solve the Sudoku puzzle using the algorithm.                     |
-|`Enter`            | Confirm the value written on the board.		               |
-
+|`Space`  	        | Solve the Sudoku puzzle using the algorithm.                     |
   
