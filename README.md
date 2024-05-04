@@ -46,7 +46,7 @@ Place all the necessary files in the same directory. To start the application, r
 ```
 python GUI.py
 ```
-Make sure that the path of the directory in the terminal is the location of the folder where solver file is present or else you would not be able to run the project.
+Make sure that the path of the directory in the terminal is the location of the folder where solver file and GUI file are present or else you would not be able to run the project.
 
 # AI Solver Input
 | Keys              | Actions                                                          |
