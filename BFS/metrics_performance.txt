@@ -1,0 +1,4 @@
+Average Total recursive calls: 107.8
+Average Time taken to solve: 171.0732258064516
+Average Total states processed: 2717.625
+Average Time taken to solve: 171.0732258064516
