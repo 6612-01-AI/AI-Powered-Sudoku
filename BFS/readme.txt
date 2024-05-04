@@ -1,4 +1,5 @@
 # SUDOKU Solved by BFS
+
 ## Introduction
 
 This Python-based application uses the Pygame library to provide an interactive graphical user interface (GUI) for solving Sudoku puzzles. It leverages the Breadth-First Search (BFS) algorithm, renowned for its systematic exploration of solutions, ensuring all possible board configurations are considered.
