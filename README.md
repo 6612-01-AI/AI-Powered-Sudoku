@@ -1,4 +1,4 @@
-# AI-Powered-Sudoku
+# AI-Powered-Sudoku Solver
 Welcome to the AI-Powered Sudoku Solver project by Team Yash & Parin from the University of New Haven. This AI-driven application leverages advanced search algorithms to efficiently solve Sudoku puzzles and offers a user-friendly graphical interface for interactive puzzle solving and visualization.
 
 ## Project Highlights
@@ -54,10 +54,12 @@ python GUI.py
 
 # Algorithm Descriptions
 Breadth-First Search (BFS): A level-order search algorithm that explores all nodes at the present depth prior to moving on to nodes at the next depth level. Efficient for finding the shortest path in terms of the number of moves.
+
 Depth-First Search (DFS): An algorithm that explores as far as possible along each branch before backtracking. It's effective for space-limited scenarios but not always optimal for finding the shortest path.
+
 Iterative Deepening Search (IDS): Combines the space efficiency of DFS with the optimality of BFS. It incrementally explores all nodes at increasing depth levels.
+
 Constraint Satisfaction Problem (CSP): This approach applies problem-solving techniques by identifying and enforcing constraints for each step in the Sudoku grid, effectively reducing the number of guesses needed.
 
 # Analysis
 While running each algorithm, the number of backtrack and time taken to solve each file is is stored in a text file, which also has the presvious logs. Also, there is another python give which is capable to evlauate the average time taken and average number of bracktracks needed by each algorithm. These files can be used to find which algorithm can solve the sudoku puzzle more efficiently.
-  
