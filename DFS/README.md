@@ -1,7 +1,7 @@
 # SUDOKU solved by CSP 
 
 ## Introduction 
-Welcome to the Sudoku Solver project! This Python-based application utilizes the Pygame library to create an interactive graphical user interface (GUI) for solving Sudoku puzzles. Whether you're a Sudoku enthusiast looking to sharpen your skills or simply seeking a fun way to pass the time, this solver offers both manual puzzle-solving and automated solving capabilities.
+This Python-based application utilizes the Pygame library to create an interactive graphical user interface (GUI) for solving Sudoku puzzles.
 
 The solver employs a combination of backtracking algorithms and constraint satisfaction techniques to efficiently find solutions to Sudoku puzzles. By generating random Sudoku puzzles of varying difficulties and providing intuitive input controls, users can enjoy a personalized Sudoku-solving experience tailored to their preferences and skill level.
 
