@@ -1,4 +1,3 @@
-# GUI.py
 import pygame
 import time
 import random
