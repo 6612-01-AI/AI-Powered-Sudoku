@@ -1,7 +1,11 @@
 # AI-Powered-Sudoku
-Welcome to the Sudoku Solver project! This Python-powered application utilizes the Pygame library to craft an interactive graphical user interface (GUI) for tackling Sudoku puzzles. Whether you're keen on honing your Sudoku-solving prowess or just seeking a delightful pastime, this solver provides both manual puzzle-solving and automated solving functionalities.
+Welcome to the Sudoku Solver AI project by Team Yash & Parin from the University of New Haven. This AI-driven application uses various search algorithms to efficiently solve Sudoku puzzles, providing a user-friendly graphical interface for an interactive experience.
 
-Leveraging a blend of backtracking algorithms and constraint satisfaction methods, the solver adeptly navigates through Sudoku puzzles to find solutions. With its ability to generate random Sudoku puzzles across different difficulty levels and intuitive input mechanisms, users can relish a personalized Sudoku-solving journey tailored to their liking and proficiency level.
+## Project Highlights
+AI Model: Employs advanced AI to solve puzzles quickly.
+Interactive GUI: Built with Pygame for easy puzzle input and solution visualization.
+Version Control: Managed with Git for collaborative and systematic development.
+For more details on setup and usage, please see the sections below.
 
 ## Environment Setup
   ### Required Python Version
@@ -11,7 +15,8 @@ Leveraging a blend of backtracking algorithms and constraint satisfaction method
   ```
   import pygame
   import random
-  import time 
+  import time
+  import deepcopy
   ```
   ### Custom Package
 
@@ -19,15 +24,13 @@ Leveraging a blend of backtracking algorithms and constraint satisfaction method
   from solver_CSP import solve, valid
   from solver_DFS import solve_dfs, valid
   from solver_IDS import iterative_deepening_solve, valid
-
+  from solver_DFS import solve_bfs, valid
   ```
+  For every algorithm there is a different GUI and solver file. So, make sure both the file are available in the same directory.
 ## Execute
+Once made a folder consisting all the required files, to excute the game we will need to run the command below in the TERMINAL.
 ```
-python CSP.py
-
-python IDS.py
-
-python DFS.py
+python GUI.py
 ```
 
 # AI Solver Input
