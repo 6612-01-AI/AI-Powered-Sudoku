@@ -1,5 +1,5 @@
 # AI-Powered-Sudoku
-Welcome to the Sudoku Solver AI project by Team Yash & Parin from the University of New Haven. This AI-driven application uses various search algorithms to efficiently solve Sudoku puzzles, providing a user-friendly graphical interface for an interactive experience.
+Welcome to the AI-Powered Sudoku Solver project by Team Yash & Parin from the University of New Haven. This AI-driven application leverages advanced search algorithms to efficiently solve Sudoku puzzles and offers a user-friendly graphical interface for interactive puzzle solving and visualization.
 
 ## Project Highlights
 AI Model: Employs advanced AI to solve puzzles quickly.
@@ -10,7 +10,9 @@ Version Control: Managed with Git for collaborative and systematic development.
 
 For more details on setup and usage, please see the sections below.
 
-## GUI.py: Manages the graphical user interface for user interaction and puzzle display.
+## Files Overview
+GUI.py: Manages the graphical user interface for user interaction and puzzle display.
+
 metrics_performance.py: Analyzes and reports performance metrics of the solver, such as average time and recursive calls.
 
 solver_IDS.py: Implements the Sudoku solver using Iterative Deepening Search (IDS) to solve puzzles.
@@ -40,7 +42,7 @@ sudoku_IDS_solver_output.txt: Logs detailed performance data for each puzzle sol
   ```
   For every algorithm there is a different GUI and solver file. So, make sure both the file are available in the same directory.
 ## Execute
-Once made a folder consisting all the required files, to excute the game we will need to run the command given below in the TERMINAL.
+Place all the necessary files in the same directory. To start the application, run the following command in your terminal:
 ```
 python GUI.py
 ```
