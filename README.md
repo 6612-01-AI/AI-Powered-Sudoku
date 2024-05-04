@@ -51,7 +51,7 @@ Make sure that the path of the directory in the terminal is the location of the 
 # AI Solver Input
 | Keys              | Actions                                                          |
 |-------------------|------------------------------------------------------------------|
-|`Space`  	        | Press it to solve the Sudoku puzzle using the algorithm.         |
+|`Space`  	        | 	Press it to solve the Sudoku puzzle using the chosen algorithm.|
 
 # Algorithm Descriptions
 Breadth-First Search (BFS): A level-order search algorithm that explores all nodes at the present depth prior to moving on to nodes at the next depth level. Efficient for finding the shortest path in terms of the number of moves.
