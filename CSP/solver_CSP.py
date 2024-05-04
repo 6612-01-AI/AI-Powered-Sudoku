@@ -31,6 +31,7 @@ def solve(board, update_callback=None):
     
     return False
 
+#Constraints
 def valid(board, num, pos, count_false=None):
     
     for i in range(9):
