@@ -3,8 +3,11 @@ Welcome to the Sudoku Solver AI project by Team Yash & Parin from the University
 
 ## Project Highlights
 AI Model: Employs advanced AI to solve puzzles quickly.
+
 Interactive GUI: Built with Pygame for easy puzzle input and solution visualization.
+
 Version Control: Managed with Git for collaborative and systematic development.
+
 For more details on setup and usage, please see the sections below.
 
 ## Environment Setup
