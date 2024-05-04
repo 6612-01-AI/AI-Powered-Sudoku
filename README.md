@@ -51,4 +51,7 @@ python GUI.py
 | Keys              | Actions                                                          |
 |-------------------|------------------------------------------------------------------|
 |`Space`  	        | Press it to solve the Sudoku puzzle using the algorithm.         |
+
+# Analysis
+While running each algorithm, the number of backtrack and time taken to solve each file is is stored in a text file, which also has the presvious logs. Also, there is another python give which is capable to evlauate the average time taken and average number of bracktracks needed by each algorithm. These files can be used to find which algorithm can solve the sudoku puzzle more efficiently.
   
