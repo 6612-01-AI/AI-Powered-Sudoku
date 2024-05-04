@@ -39,5 +39,5 @@ python GUI.py
 # AI Solver Input
 | Keys              | Actions                                                          |
 |-------------------|------------------------------------------------------------------|
-|`Space`  	        | Solve the Sudoku puzzle using the algorithm.                     |
+|`Space`  	        | Press it to solve the Sudoku puzzle using the algorithm.         |
   
